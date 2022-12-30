@@ -1,0 +1,65 @@
+<div
+  style="background-image: url('./assets/background.jpg');background-size: cover; background-repeat: no-repeat;position: relative;height: 700px;">
+  <mat-toolbar class="example-toolbar" color="accent">
+    <img routerLink="/" class="image" src=".\assets\images.jpg" alt="no img">
+    <span id="name" style="font-family: Copperplate,fantasy;">TOSSIN PIZZA</span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+
+    <span class="example-spacer"></span>
+
+
+
+
+    <button routerLink="login" style="margin-right: 40px;" mat-raised-button color="warn"
+      aria-label="Example icon-button with share icon">
+      <mat-icon>person_outline</mat-icon>Login
+    </button>
+    <span style="margin-right:20px ;" matBadge="0" matBadgeOverlap="false" matBadgeSize="small" matBadgeColor="accent">
+      <button routerLink="cart" mat-raised-button color="warn" aria-label="Example icon-button with share icon">
+        <mat-icon>shopping_cart</mat-icon>Cart
+      </button>
+    </span>
+  </mat-toolbar>
+
+
+  <form [formGroup]="register" (ngSubmit)="onsubmit()"
+    style="margin-left: 500px;margin-top: 0px; width: 400px;padding: 80px; padding:40px;text-align: center;color: rgb(5, 4, 4) ;">
+  
+    <h1 style="font-weight: bolder;">Register User</h1>
+    <div class="example-container" style=" padding-top: 10px;">
+      <mat-form-field appearance="fill" style=" width: 300px;">
+        <mat-label>Enter your Id</mat-label>
+        <input matInput placeholder="Enter your userName" formControlName="userName" [(ngModel)]="registeredUser.userId"
+          style="padding-right:100px ;">
+        <mat-error *ngIf="getuserId().errors?.['required']"> can not be empty </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill" style=" width: 300px;">
+        <mat-label>Enter your userName</mat-label>
+        <input matInput placeholder="Enter your userName" formControlName="userName"
+          [(ngModel)]="registeredUser.userName" style="padding-right:100px ;">
+        <mat-error *ngIf="getusername().errors?.['required']"> can not be empty </mat-error>
+      </mat-form-field>
+      <br>
+      <br>
+      <mat-form-field appearance="fill" style=" width: 300px;">
+        <mat-label>Enter your EmailId</mat-label>
+        <input matInput placeholder="Enter your userName" formControlName="userEmailId"
+          [(ngModel)]="registeredUser.userEmailId" style="padding-right:100px ;">
+        <mat-error *ngIf="getEmailId().errors?.['required']"> can not be empty </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill" style="width: 300px;">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="userPassword"
+          [(ngModel)]="registeredUser.userPassword">
+        <mat-error *ngIf="getpassword().errors?.['required']">cannot be empty </mat-error>
+      </mat-form-field>
+      <br>
+
+      <button mat-stroked-button color="accent" type="submit" [disabled]="register.invalid">Submit</button>
+      <br>
+    </div>
+  </form>
+</div>

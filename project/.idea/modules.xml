@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/project/PizzaApp/PizzaApp/ApiGatewayService/ApiGatewayService.iml" filepath="$PROJECT_DIR$/project/PizzaApp/PizzaApp/ApiGatewayService/ApiGatewayService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project/PizzaApp/PizzaApp/EurekaService/EurekaService.iml" filepath="$PROJECT_DIR$/project/PizzaApp/PizzaApp/EurekaService/EurekaService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project/PizzaApp/PizzaApp/PizzaApp.iml" filepath="$PROJECT_DIR$/project/PizzaApp/PizzaApp/PizzaApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project/PizzaApp/PizzaApp/PizzaService/PizzaService.iml" filepath="$PROJECT_DIR$/project/PizzaApp/PizzaApp/PizzaService/PizzaService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project/PizzaService/PizzaService/PizzaService (1).iml" filepath="$PROJECT_DIR$/project/PizzaService/PizzaService/PizzaService (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/project/PizzaApp/PizzaApp/authenticationservice/authenticationservice.iml" filepath="$PROJECT_DIR$/project/PizzaApp/PizzaApp/authenticationservice/authenticationservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_9213.iml" filepath="$PROJECT_DIR$/.idea/modules/project_9213.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_9213-build.iml" filepath="$PROJECT_DIR$/.idea/modules/project_9213-build.iml" />
+    </modules>
+  </component>
+</project>

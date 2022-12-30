@@ -1,0 +1,50 @@
+.example-spacer {
+    flex: 1 1 auto;
+   }
+
+   .example-card {
+    width: 400px;
+    height: 360px;
+    margin:20px;
+    float: left;
+  } 
+
+  .example-spacer {
+    flex: 1 1 auto;
+   }
+
+
+  .image{
+    width: 100px;
+    height: 60px;
+    margin-left: 50px;
+  }
+  
+
+
+  .example-container {
+    border: 1px solid #555;
+  }
+
+.example-sidenav{
+  width: 250px;
+}
+
+#sidenavText{
+  padding-top: 10px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+#sign-in{
+  margin-left: 30px;
+}
+
+#name{
+  font-size: 45px;
+  margin-left: 60px;
+}
+
+input{
+  text-decoration-color: black;
+}

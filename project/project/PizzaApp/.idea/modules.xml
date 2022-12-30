@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PizzaApp/ApiGatewayService/ApiGatewayService.iml" filepath="$PROJECT_DIR$/PizzaApp/ApiGatewayService/ApiGatewayService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PizzaApp/EurekaService/EurekaService.iml" filepath="$PROJECT_DIR$/PizzaApp/EurekaService/EurekaService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PizzaApp/PizzaApp.iml" filepath="$PROJECT_DIR$/PizzaApp/PizzaApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PizzaApp/PizzaService/PizzaService.iml" filepath="$PROJECT_DIR$/PizzaApp/PizzaService/PizzaService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PizzaApp/authenticationservice/authenticationservice.iml" filepath="$PROJECT_DIR$/PizzaApp/authenticationservice/authenticationservice.iml" />
+    </modules>
+  </component>
+</project>

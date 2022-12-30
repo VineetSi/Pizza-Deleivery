@@ -1,0 +1,140 @@
+<mat-toolbar class="example-toolbar" color="accent">
+  <!-- <button mat-icon-button (click)="drawer.toggle()" class="example-icon"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>restaurant</mat-icon>
+    </button> -->
+  <img class="image" src=".\assets\images.jpg" alt="no img">
+  <span id="name" style="font-family: Copperplate,fantasy;">TOSSIN PIZZA</span>
+  <span class="example-spacer"></span>
+  <span class="example-spacer"></span>
+
+
+  <span class="example-spacer"></span>
+
+
+  <button *ngIf="isUserLoggedIn" routerLink="login" style="margin-right: 40px;" mat-raised-button color="warn"
+    aria-label="Example icon-button with share icon">
+    <mat-icon>person_outline</mat-icon>Login
+  </button>
+  <span style="margin-right:20px ;" matBadge="{{count}}" matBadgeOverlap="false" matBadgeSize="small"
+    matBadgeColor="accent">
+    <button routerLink="cart" mat-raised-button color="warn" aria-label="Example icon-button with share icon"
+      (click)=getOrderData()>
+      <mat-icon>shopping_cart</mat-icon>Cart
+    </button>
+  </span>
+</mat-toolbar>
+
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <div> <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>home</mat-icon>
+      </button>Home</div>
+    <div> <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>explore</mat-icon>
+      </button>Explore</div>
+    <div> <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>restaurant_menu</mat-icon>
+      </button>Categories</div>
+    <div> <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>history</mat-icon>
+      </button>Order History</div>
+    <hr>
+
+    <p id="sidenavText">
+      Sign in to view, <br>add, and order Pizza.
+    </p>
+    <button id="sign-in" mat-stroked-button color="primary" aria-label="Example icon-button with share icon">
+      <mat-icon>account_circle</mat-icon>SIGN IN
+    </button>
+  </mat-drawer>
+</mat-drawer-container>
+
+
+<mat-grid-list cols="3" rowHeight="2:1.2" style=" background-color: white;">
+
+  <mat-grid-tile>
+    <mat-card class="example-card" style=" background-image:url('./assets/Cheese Onion Pizza.jpg') ;">
+      <mat-card-title>Cheese Onion Pizza</mat-card-title>
+
+      <mat-card-actions class="button">
+        <br><br>
+        <button mat-raised-button color="accent" (click)="onclick(0)">Add to cart</button>
+        <button style="margin-left: 110px;" mat-raised-button color="warn" (click)="remove(0)">remove item</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+
+
+  <mat-grid-tile>
+    <mat-card class="example-card" style=" background-image:url('./assets/Double Cheese Pizza.jpg') ;">
+      <mat-card-title>Double Cheese Pizza</mat-card-title>
+      <br><br>
+
+      <mat-card-actions class="button">
+        <button mat-raised-button color="accent" (click)="onclick(1)">Add to cart</button>
+        <button style="margin-left: 134px;" mat-raised-button color="warn" (click)="remove(1)">remove item</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+
+
+  <mat-grid-tile>
+    <mat-card class="example-card" style=" background-image:url('./assets/Margherita Pizza.jpeg') ;">
+      <mat-card-title>Margherita Pizza</mat-card-title>
+      <br><br>
+
+      <mat-card-actions style="float: left;" class="button">
+        <button mat-raised-button color="accent" (click)="onclick(2)">Add to cart</button>
+        <button style="margin-left: 134px;" mat-raised-button color="warn" (click)="remove(2)">remove item</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+
+
+  <mat-grid-tile>
+    <mat-card class="example-card" style=" background-image:url('./assets/Peri Peri Pizza.JPG') ;">
+      <mat-card-title>Peri Peri Pizza</mat-card-title>
+      <br><br>
+
+      <mat-card-actions class="button">
+
+        <button mat-raised-button color="accent" (click)="onclick(3)">Add to cart</button>
+
+        <button style="margin-left: 134px;" mat-raised-button color="warn" (click)="remove(3)">remove item</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+
+
+  <mat-grid-tile>
+    <mat-card class="example-card" style=" background-image:url('./assets/Cheese Corn Pizza.jpg') ;">
+      <mat-card-title>Cheese Corn Pizza</mat-card-title>
+      <br><br>
+
+      <mat-card-actions class="button">
+
+        <button mat-raised-button color="accent" (click)="onclick(4)">Add to cart</button>
+
+        <button style="margin-left: 134px;" mat-raised-button color="warn" (click)="remove(4)">remove item</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+
+
+  <mat-grid-tile>
+    <mat-card class="example-card" style=" background-image:url('./assets/Tandoori Pizza.jpg') ;">
+      <mat-card-title>Tandoori Pizza</mat-card-title>
+      <br><br>
+
+      <mat-card-actions class="button">
+
+        <button mat-raised-button color="accent" (click)="onclick(5)">Add to cart</button>
+
+        <button style="margin-left: 134px;" mat-raised-button color="warn" (click)="remove(5)">remove item</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+
+</mat-grid-list>

@@ -1,0 +1,73 @@
+version: "3.3"
+services:
+  mysqlservice:
+    image: mysql:5.5
+    container_name: mysql-container
+    network_mode: host
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_USERNAME: user
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+
+  mongodbservice:
+    image: mongo:latest
+    container_name: mongo-container
+    network_mode: host
+    ports:
+      - 27017:27017
+
+  authenticationservice:
+    image: authenservice
+    container_name: authen-container
+    build: authenticationservice/
+    network_mode: host
+    ports:
+      - 8085:8085
+    depends_on:
+      - mysqlservice
+      - cloudApiService
+      - eurekaServer
+    restart: always
+
+  pizzaservice:
+    image: pizzaservice
+    container_name: pizza-service
+    build: PizzaService
+    network_mode: host
+    ports:
+      - 8082:8082
+    depends_on:
+      - mongodbservice
+      - cloudApiService
+      - eurekaServer
+    restart: always
+
+
+  cloudApiService:
+    image: api-gateway-service
+    build: ApiGatewayService/
+    restart: always
+    network_mode: host
+    #hostname: localhost
+    ports:
+      - 9000:9000
+    environment:
+      API_GATEWAY_PORT: 9000
+      EUREKA_SERVER_IP: localhost
+      EUREKA_SERVER_PORT: 8761
+    depends_on:
+      - eurekaServer
+
+  eurekaServer:
+    image: eureka-service
+    build: EurekaService
+    restart: always
+    network_mode: host
+    environment:
+      EUREKA_SERVER_PORT: 8761
+    ports:
+      - 8761:8761

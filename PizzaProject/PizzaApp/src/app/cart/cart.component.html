@@ -1,0 +1,48 @@
+<div
+  style="background-image: url('./assets/stock-photo-top-view-shopping-cart-presents.jpg');background-size: cover; background-repeat: no-repeat;position: relative;height: 700px;">
+  <mat-toolbar class="example-toolbar" color="accent">
+    <img class="image" src=".\assets\images.jpg" alt="no img">
+    <span id="name" style="font-family: Copperplate,fantasy;">TOSSIN PIZZA</span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+
+
+    <span class="example-spacer"></span>
+
+
+
+    <button routerLink="login" style="margin-right: 40px;" mat-icon-button class="example-icon"
+      aria-label="Example icon-button with share icon">
+      <mat-icon>person_outline</mat-icon>Login
+    </button>
+    <span matBadge="{{num}}" style="margin-right:20px ;" matBadgeOverlap="false" matBadgeSize="small"
+      matBadgeColor="accent">
+      <button routerLink="cart" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>shopping_cart</mat-icon>Cart
+      </button>
+    </span>
+  </mat-toolbar>
+
+
+  <table style="margin-left: 450px; margin-top: 75px;">
+    <h1 style="margin-left: 110px; margin-top: 10px;"><b>OrderId: {{recData.orderId}}</b></h1>
+    <tr>
+
+      <th><b>Food item</b></th>
+      <th class="th1"><b>Food Price</b></th>
+
+    </tr>
+    <tr *ngFor="let x of recData.foodProducts">
+
+      <td>{{x.foodName}}</td>
+      <td class="th1">{{x.price}}</td>
+
+    </tr>
+  </table>
+  <p style="margin-left:450px; margin-top: 20px;">Total Price Of your Order is {{total}}</p>
+  <button style="margin-left:450px; border: 1px solid black; margin-top: 20px;" mat-button color="warn"
+    (click)="orderNow()">
+    <mat-icon>restaurant</mat-icon>Order
+  </button>
+
+</div>

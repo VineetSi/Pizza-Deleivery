@@ -1,0 +1,49 @@
+<div
+  style="background-image: url('./assets/background.jpeg ');background-size: cover; background-repeat: no-repeat;position: relative;height: 700px;">
+  <mat-toolbar class="example-toolbar" color="accent">
+    <img routerLink="/" class="image" src=".\assets\images.jpg" alt="no img">
+    <span id="name" style="font-family: Copperplate,fantasy;">TOSSIN PIZZA</span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+
+
+    <span class="example-spacer"></span>
+
+
+    <span style="margin-right:20px ;" matBadge="0" matBadgeOverlap="false" matBadgeSize="small" matBadgeColor="accent">
+      <button routerLink="cart" mat-raised-button color="warn" aria-label="Example icon-button with share icon">
+        <mat-icon>shopping_cart</mat-icon>Cart
+      </button>
+    </span>
+  </mat-toolbar>
+
+  <form [formGroup]="profileForm" (ngSubmit)="onsubmit()"
+    style="margin-left: 500px;margin-top: 150px; width: 400px;padding: 80px; padding:40px;text-align: center;color: rgb(9, 9, 9) ;">
+
+    <h1  style="font-weight: bolder; color: black;">Login</h1>
+    <div class="example-container" style=" padding: 20px; border-radius: 40px;">
+      <mat-form-field appearance="fill" style=" width: 300px; color: rgb(12, 12, 12);">
+        <mat-label>Enter your userName</mat-label>
+        <input matInput placeholder="Enter your userName" formControlName="user" [(ngModel)]="myuser.userId"
+          style="padding-right:100px ;">
+        <mat-error *ngIf="getuserid().errors?.['required']"> can not be empty </mat-error>
+
+      </mat-form-field>
+
+      <br>
+      <mat-form-field appearance="fill" style=" width: 300px;">
+        <mat-label >Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="pass" [(ngModel)]="myuser.userPassword">
+        <mat-error *ngIf="getpassword().errors?.['required']">cannot be empty </mat-error>
+      </mat-form-field>
+      <br>
+
+      <button  color="accent" type="submit" [disabled]="profileForm.invalid">Submit</button><span
+        class="example-spacer"></span>
+
+      <!-- <a routerLink="/register" style="text-decoration: none; color:blue;">click here to create account</a> -->
+      <button routerLink="/register" mat-raised-button color="accent" style="margin-left:40px">Register</button>
+
+    </div>
+  </form>
+</div>
